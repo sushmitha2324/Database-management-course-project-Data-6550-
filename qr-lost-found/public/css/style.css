@@ -1,0 +1,21 @@
+/* Custom styles for QR Lost & Found */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-brand {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 5px 10px;
+
+
+
