@@ -1,0 +1,22 @@
+<h2>Edit Item</h2>
+
+<form method="POST" action="/edit/<%= item._id %>">
+
+  <div class="mb-3">
+      <label class="form-label">Item Name</label>
+          <input name="itemName" class="form-control" value="<%= item.itemName %>" required>
+            </div>
+
+              <div class="mb-3">
+                  <label class="form-label">Description</label>
+                      <input name="description" class="form-control" value="<%= item.description %>">
+                        </div>
+
+                          <div class="mb-3">
+                              <label class="form-label">Location</label>
+                                  <input name="location" class="form-control" value="<%= item.location %>">
+                                    </div>
+
+                                      <button class="btn btn-success">Save Changes</button>
+                                        <a href="/dashboard" class="btn btn-secondary">Cancel</a>
+                                        </form>
