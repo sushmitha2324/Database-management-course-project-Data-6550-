@@ -1,0 +1,60 @@
+<h2 class="mb-4">Your Items</h2>
+
+<form method="GET" class="mb-3 d-flex">
+  <input
+      type="text"
+          name="search"
+              value="<%= search %>"
+                  placeholder="Search items..."
+                      class="form-control me-2">
+                        <button class="btn btn-outline-primary">Search</button>
+                        </form>
+
+                        <a href="/add-item" class="btn btn-primary mb-3">Add New Item</a>
+
+                        <div class="row">
+                          <% items.forEach(item => { %>
+
+                              <div class="col-md-4 mb-4">
+                                    <div class="card shadow-sm">
+                                            <div class="card-body">
+
+                                                      <h5><%= item.itemName %></h5>
+
+                                                                <p>
+                                                                            Status:
+                                                                                        <span class="badge bg-<%= item.status === 'lost' ? 'danger' : 'success' %>">
+                                                                                                      <%= item.status %>
+                                                                                                                  </span>
+                                                                                                                            </p>
+                                                                                                                            
+                                                                                                                                      <p>Scans: <strong><%= item.scanCount %></strong></p>
+                                                                                                                                      
+                                                                                                                                                <img src="<%= item.qrCode %>" class="img-fluid mb-3"/>
+                                                                                                                                                
+                                                                                                                                                          <a href="/lost/<%= item._id %>" class="btn btn-warning btn-sm">Lost</a>
+                                                                                                                                                                    <a href="/found/<%= item._id %>" class="btn btn-success btn-sm">Found</a>
+                                                                                                                                                                              <a href="/edit/<%= item._id %>" class="btn btn-info btn-sm">Edit</a>
+                                                                                                                                                                                        <a href="/delete/<%= item._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                                                                                                                                                                        
+                                                                                                                                                                                                </div>
+                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                          
+                                                                                                                                                                                                            <% }) %>
+                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                            
+                                                                                                                                                                                                            <!-- Pagination -->
+                                                                                                                                                                                                            <nav>
+                                                                                                                                                                                                            <ul class="pagination">
+                                                                                                                                                                                                            
+                                                                                                                                                                                                              <% for(let i = 1; i <= totalPages; i++) { %>
+                                                                                                                                                                                                                  <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+                                                                                                                                                                                                                        <a class="page-link" href="?page=<%= i %>&search=<%= search %>">
+                                                                                                                                                                                                                                <%= i %>
+                                                                                                                                                                                                                                      </a>
+                                                                                                                                                                                                                                          </li>
+                                                                                                                                                                                                                                            <% } %>
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                            </ul>
+                                                                                                                                                                                                                                            </nav>
