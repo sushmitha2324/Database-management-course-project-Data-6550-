@@ -1,0 +1,21 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+      <div class="card shadow p-4">
+            <h3><%= item.itemName %></h3>
+                  <p>Status: <span class="badge bg-<%= item.status === 'lost' ? 'danger' : 'success' %>"><%= item.status %></span></p>
+                        <p><%= item.description %></p>
+                              <p>Last seen: <%= item.location %></p>
+                                    <p>Scans: <strong><%= item.scanCount %></strong></p>
+
+                                          <% if (item.status === 'lost') { %>
+                                                  <div class="alert alert-danger mt-3">
+                                                            This item is reported LOST. If you found it please contact the owner.
+                                                                    </div>
+                                                                          <% } else { %>
+                                                                                  <div class="alert alert-success mt-3">
+                                                                                            This item is safe with its owner.
+                                                                                                    </div>
+                                                                                                          <% } %>
+                                                                                                              </div>
+                                                                                                                </div>
+                                                                                                                </div>
