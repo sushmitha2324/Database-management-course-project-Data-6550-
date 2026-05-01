@@ -1,0 +1,43 @@
+<h2>Admin Dashboard</h2>
+
+<h4>Users (<%= users.length %>)</h4>
+<table class="table table-bordered mb-5">
+  <thead>
+      <tr>
+            <th>Name</th>
+                  <th>Email</th>
+                        <th>Role</th>
+                            </tr>
+                              </thead>
+                                <tbody>
+                                    <% users.forEach(user => { %>
+                                        <tr>
+                                              <td><%= user.name %></td>
+                                                    <td><%= user.email %></td>
+                                                          <td><%= user.role %></td>
+                                                              </tr>
+                                                                  <% }) %>
+                                                                    </tbody>
+                                                                    </table>
+
+                                                                    <h4>All Items (<%= items.length %>)</h4>
+                                                                    <table class="table table-bordered">
+                                                                      <thead>
+                                                                          <tr>
+                                                                                <th>Item</th>
+                                                                                      <th>Owner</th>
+                                                                                            <th>Status</th>
+                                                                                                  <th>Scans</th>
+                                                                                                      </tr>
+                                                                                                        </thead>
+                                                                                                          <tbody>
+                                                                                                              <% items.forEach(item => { %>
+                                                                                                                  <tr>
+                                                                                                                        <td><%= item.itemName %></td>
+                                                                                                                              <td><%= item.user ? item.user.name : 'N/A' %></td>
+                                                                                                                                    <td><%= item.status %></td>
+                                                                                                                                          <td><%= item.scanCount %></td>
+                                                                                                                                              </tr>
+                                                                                                                                                  <% }) %>
+                                                                                                                                                    </tbody>
+                                                                                                                                                    </table>
